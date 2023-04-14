@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Untree.co" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="css/daterangepicker.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Inicio - Página básica 6</title>
+  </head>
+
+  <body>
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+          <span class="icofont-close js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <nav class="site-nav">
+      <div class="container">
+        <div class="site-navigation">
+          <a href="index.html" class="logo m-0">LOGO </a>
+          <ul
+            class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right"
+          >
+            <li class="active btnNavActive"><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="propiedad.html">Propiedades</a></li>
+            <li><a href="contacto.html">Contáctanos</a></li>
+            <li><a href="intranet.html">Intranet</a></li>
+          </ul>
+          <a
+            href="#"
+            class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
+            data-toggle="collapse"
+            data-target="#main-navbar"
+          >
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="container">
+        <div class="row align-items-center hero-content">
+          <div class="col-lg-7">
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" id="propertyType">
+                      <option>Tipo de Propiedad</option>
+                      <option>Tipo de Propiedad 1</option>
+                      <option>Tipo de Propiedad 2</option>
+                      <option>Tipo de Propiedad 3</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" id="operationType">
+                      <option>Tipo de operación</option>
+                      <option>Tipo de operación 1</option>
+                      <option>Tipo de operación 2</option>
+                      <option>Tipo de operación 3</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" id="region">
+                      <option>Región</option>
+                      <option>Región 1</option>
+                      <option>Región 2</option>
+                      <option>Región 3</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" id="city">
+                      <option>Ciudad</option>
+                      <option>Ciudad 1</option>
+                      <option>Ciudad 2</option>
+                      <option>Ciudad 3</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" id="bedrooms">
+                      <option>Habitaciones</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" id="bathrooms">
+                      <option>Baños</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" id="bathrooms">
+                      <option>Estacionamientos</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 d-flex w-100 justify-content-around align-items-center"
+                >
+                  <label>Precio: </label>
+                  <div class="form-check mb-2 py-3">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="exampleRadios"
+                      id="exampleRadios1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="exampleRadios1">
+                      UF
+                    </label>
+                  </div>
+
+                  <div class="form-check mb-2 py-3">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="exampleRadios"
+                      id="exampleRadios2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="exampleRadios2">
+                      CLP
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" id="region">
+                      <option>Estacionamientos</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-flex flex-row">
+                  <div class="form-group mx-1">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="price-from"
+                      placeholder="Desde"
+                    />
+                  </div>
+
+                  <div class="form-group mx-1">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="price-to"
+                      placeholder="Hasta"
+                    />
+                  </div>
+                </div>
+
+ 
+
+                <div class="col-md-12" style="display: flex;justify-content: end;">
+                  <button type="submit" class="btn btn-dark text-end">
+                    Buscar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-5 main-search-title">
+            <div>
+              <h2>Búsqueda Avanzada</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-color mb-5">
+      <div class="container">
+        <div class="row text-center justify-content-center mb-5">
+          <div class="col-lg-7">
+            <h2 class="section-title text-center" style="font-size: 38px">
+              Propiedades destacadas
+            </h2>
+          </div>
+        </div>
+
+        <div class="owl-carousel owl-3-slider">
+          <div class="item">
+            <div class="card" style="width: 20rem">
+              <span class="uf-item-price">Casa / Arriendo</span>
+              <img
+                class="card-img-top img-fluid card-img"
+                src="./images/property/property-1.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h3 class="card-title">Casa Amoblada, excelente ubicación</h3>
+                <small class="card-text-small"
+                  >La Cruz, Valparaiso, Chile</small
+                >
+                <div class="info-property">
+                  <span class="card-more-info">Habitaciones: 1</span>
+                  <span class="card-more-info">Baños: 1</span>
+                </div>
+                <h3
+                  class="card-title"
+                  style="font-size: 28px; font-weight: 700"
+                >
+                  UF 16.800
+                </h3>
+                <a href="detalle_propiedad.html" class="btn btn-dark"
+                  >Ver más...</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="card" style="width: 20rem">
+              <span class="uf-item-price">Casa / Arriendo</span>
+              <img
+                class="card-img-top img-fluid card-img"
+                src="./images/property/property-2.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h3 class="card-title">Casa Amoblada, excelente ubicación</h3>
+                <small class="card-text-small"
+                  >La Cruz, Valparaiso, Chile</small
+                >
+                <div class="info-property">
+                  <span class="card-more-info">Habitaciones: 1</span>
+                  <span class="card-more-info">Baños: 1</span>
+                </div>
+                <h3
+                  class="card-title"
+                  style="font-size: 28px; font-weight: 700"
+                >
+                  UF 16.800
+                </h3>
+
+                <a href="detalle_propiedad.html" class="btn btn-dark"
+                  >Ver más...</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="card" style="width: 20rem">
+              <span class="uf-item-price">Casa / Arriendo</span>
+              <img
+                class="card-img-top img-fluid card-img"
+                src="./images/property/property-3.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h3 class="card-title">Casa Amoblada, excelente ubicación</h3>
+                <small class="card-text-small"
+                  >La Cruz, Valparaiso, Chile</small
+                >
+                <div class="info-property">
+                  <span class="card-more-info">Habitaciones: 1</span>
+                  <span class="card-more-info">Baños: 1</span>
+                </div>
+                <h3
+                  class="card-title"
+                  style="font-size: 28px; font-weight: 700"
+                >
+                  UF 16.800
+                </h3>
+                <a href="detalle_propiedad.html" class="btn btn-dark"
+                  >Ver más...</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="card" style="width: 20rem">
+              <span class="uf-item-price">Casa / Arriendo</span>
+              <img
+                class="card-img-top img-fluid card-img"
+                src="./images/property/property-1.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h3 class="card-title">Casa Amoblada, excelente ubicación</h3>
+                <small class="card-text-small"
+                  >La Cruz, Valparaiso, Chile</small
+                >
+                <div class="info-property">
+                  <span class="card-more-info">Habitaciones: 1</span>
+                  <span class="card-more-info">Baños: 1</span>
+                </div>
+                <h3
+                  class="card-title"
+                  style="font-size: 28px; font-weight: 700"
+                >
+                  UF 16.800
+                </h3>
+
+                <a href="detalle_propiedad.html" class="btn btn-dark"
+                  >Ver más...</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="card" style="width: 20rem">
+              <span class="uf-item-price">Casa / Arriendo</span>
+              <img
+                class="card-img-top img-fluid card-img"
+                src="./images/property/property-3.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h3 class="card-title">Casa Amoblada, excelente ubicación</h3>
+                <small class="card-text-small"
+                  >La Cruz, Valparaiso, Chile</small
+                >
+                <div class="info-property">
+                  <span class="card-more-info">Habitaciones: 1</span>
+                  <span class="card-more-info">Baños: 1</span>
+                </div>
+                <h3
+                  class="card-title"
+                  style="font-size: 28px; font-weight: 700"
+                >
+                  UF 16.800
+                </h3>
+
+                <a href="detalle_propiedad.html" class="btn btn-dark"
+                  >Ver más...</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="section-color footer-section">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-lg-4 d-flex justify-content-center align-items-center"
+          >
+            <a href="/index.html" class="footer-logo">LOGO</a>
+          </div>
+
+          <div class="col-lg-4 contact-info">
+            <h4>Menú</h4>
+            <ul>
+              <li class="text">
+                <a
+                  href="index.html"
+                  style="color: #fff !important; font-size: 18px"
+                  >Inicio</a
+                >
+              </li>
+              <li class="text">
+                <a
+                  href="nosotros.html"
+                  style="color: #fff !important; font-size: 18px"
+                  >Nosotros</a
+                >
+              </li>
+              <li class="text">
+                <a
+                  href="propiedad.html"
+                  style="color: #fff !important; font-size: 18px"
+                  >Propiedades</a
+                >
+              </li>
+              <li class="text">
+                <a
+                  href="contacto.html"
+                  style="color: #fff !important; font-size: 18px"
+                  >Contáctanos</a
+                >
+              </li>
+              <li class="text">
+                <a
+                  href="intranet.html"
+                  style="color: #fff !important; font-size: 18px"
+                  >Intranet</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="contact-info">
+              <h4>Contacto</h4>
+              <ul>
+                <li>
+                  <i class="icon-map-marker"></i>
+                  <span class="text"
+                    >RentalProps Spa Apoquindo 6410 Of. 605, Las Condes</span
+                  >
+                </li>
+                <li>
+                  <i class="icon-phone"></i>
+                  <span class="text">+56 9 1234 5678</span>
+                </li>
+                <li>
+                  <i class="icon-message"></i>
+                  <span class="text">contacto@rentalprop.cl</span>
+                </li>
+              </ul>
+            </div>
+            <div class="social-media">
+              <ul>
+                <li>
+                  <a href="/index.html">
+                    <i class="icon-linkedin"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="/index.html">
+                    <i class="icon-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="/index.html">
+                    <i class="icon-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="/index.html">
+                    <i class="icon-facebook"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm" style="border-top: 1px solid #fff">
+            <div class="position-relative mt-3">
+              <p style="color: #fff">&copy Todos los derechos reservados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Cargando...</span>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/daterangepicker.js"></script>
+
+    <script src="js/typed.js"></script>
+    <script>
+      $(function () {
+        var slides = $(".slides"),
+          images = slides.find("img");
+
+        images.each(function (i) {
+          $(this).attr("data-id", i + 1);
+        });
+
+        var typed = new Typed(".typed-words", {
+          strings: [
+            "San Francisco.",
+            " Paris.",
+            " New Zealand.",
+            " Maui.",
+            " London.",
+          ],
+          typeSpeed: 80,
+          backSpeed: 80,
+          backDelay: 4000,
+          startDelay: 1000,
+          loop: true,
+          showCursor: true,
+          preStringTyped: (arrayPos, self) => {
+            arrayPos++;
+            console.log(arrayPos);
+            $(".slides img").removeClass("active");
+            $('.slides img[data-id="' + arrayPos + '"]').addClass("active");
+          },
+        });
+      });
+    </script>
+
+    <script src="js/custom.js"></script>
+  </body>
+</html>
