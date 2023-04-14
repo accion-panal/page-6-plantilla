@@ -923,7 +923,7 @@
                 <div class="card" style="width:100%;">
                 <div class="row">
                   <div class="col-sm-5">
-                    <span class="uf-item-price" style="font-size: 12px;margin-right: 13px;">Depto / Arriendo</span>
+                    <span class="uf-item-price .typed-words" style="font-size: 12px;margin-right: 13px;">Depto / Arriendo</span>
                     <img
                       class="card-img-top img-fluid card-img"
                       src="./images/property/property-1.jpg"
@@ -1186,27 +1186,27 @@
           $(this).attr("data-id", i + 1);
         });
 
-        var typed = new Typed(".typed-words", {
-          strings: [
-            "San Francisco.",
-            " Paris.",
-            " New Zealand.",
-            " Maui.",
-            " London.",
-          ],
-          typeSpeed: 80,
-          backSpeed: 80,
-          backDelay: 4000,
-          startDelay: 1000,
-          loop: true,
-          showCursor: true,
-          preStringTyped: (arrayPos, self) => {
-            arrayPos++;
-            console.log(arrayPos);
-            $(".slides img").removeClass("active");
-            $('.slides img[data-id="' + arrayPos + '"]').addClass("active");
-          },
-        });
+        // var typed = new Typed(".typed-words", {
+        //   strings: [
+        //     "San Francisco.",
+        //     " Paris.",
+        //     " New Zealand.",
+        //     " Maui.",
+        //     " London.",
+        //   ],
+        //   typeSpeed: 80,
+        //   backSpeed: 80,
+        //   backDelay: 4000,
+        //   startDelay: 1000,
+        //   loop: true,
+        //   showCursor: true,
+        //   preStringTyped: (arrayPos, self) => {
+        //     arrayPos++;
+        //     console.log(arrayPos);
+        //     $(".slides img").removeClass("active");
+        //     $('.slides img[data-id="' + arrayPos + '"]').addClass("active");
+        //   },
+        // });
       });
     </script>
 
