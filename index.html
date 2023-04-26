@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="css/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
 
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+
     <title>Inicio - Página básica 6</title>
   </head>
 
@@ -235,8 +237,22 @@
             </h2>
           </div>
         </div>
-
-        <div class="owl-carousel owl-3-slider">
+        <div class="row">
+          <div class="col-12">
+            <section class="splide" aria-label="Splide Basic HTML Example">
+              <div class="splide__track">
+                <ul class="splide__list" id="carousel_">
+                  <li class="splide__slide"></li>
+                
+                </ul>
+              </div>
+    
+              
+            </section>
+          </div>
+    
+        </div>
+        <!-- <div class="owl-carousel owl-3-slider">
           <div class="item">
             <div class="card" style="width: 20rem">
               <span class="uf-item-price">Casa / Arriendo</span>
@@ -389,7 +405,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -505,7 +521,7 @@
         <span class="sr-only">Cargando...</span>
       </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -518,7 +534,7 @@
     <script src="js/daterangepicker.js"></script>
 
     <script src="js/typed.js"></script>
-    <script>
+    <!-- <script>
       $(function () {
         var slides = $(".slides"),
           images = slides.find("img");
@@ -549,8 +565,13 @@
           },
         });
       });
-    </script>
+    </script> -->
 
     <script src="js/custom.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="js/utils/getExchangeRate.js"></script>
+    <script type="module" src="js/propiedad/apiCarouselDestacadas.js"></script>
+
   </body>
 </html>
