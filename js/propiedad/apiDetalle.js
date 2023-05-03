@@ -15,10 +15,6 @@ let indicator;
 let img;
 
 
-
-
-
-
 // console.log(id); // Imprimirá "134" si ese es el valor actual del parámetro "id"
 
 // data.images.forEach((images, index) => {img +=
@@ -32,19 +28,7 @@ let img;
 //     })
 
 
-// document.getElementById('titleProp').innerHTML = 
-// `<div class="row justify-content-center">
-//     <div class="col-lg-6 text-center">
-//         <h3 style="text-transform: uppercase; color: #fff;">
-//             <b>${data.title}</b>
-//         </h3>
-//         <p style="font-size: 20px">
-//             <i class="fa-sharp fa-solid fa-location-dot"></i>
-//             ${data.city},${data.commune},
-//             <span>Chile</span>
-//         </p>
-//     </div>
-// </div> `
+
 
 // document.getElementById('container-carrucel-imgProps').innerHTML = 
 // `
@@ -82,114 +66,40 @@ let img;
 //         </div>
 // `
 
-// document.getElementById('container-descrip-propiedad').innerHTML = `
-// <div class="col-sm-8">
-// <p class="title" style="font-size: 38px"><b>UF ${clpToUf(data.price, ufValueAsNumber)}</b></p>
-// <p class="sub-title" style="font-size: 22px">
-//   CLP ${parseToCLPCurrency(data?.price)}
-// </p>
+document.getElementById('titleProp').innerHTML = 
+`<span>${data.title}</span>
+<small>${data.types} / ${data.operation}</small> `;
 
-// <h2 class="title" style="font-size: 30px">
-//   <b>Descripción</b>
-// </h2>
-// <div class="content">
-//   <p>
-//     ${data.description != null && data.description != undefined && data.description != "" ? data.description : "No registra descripción" }
-//   </p>
-//   <h5>Requisitos</h5>
+document.getElementById('extra-prop').innerHTML = 
+`<h4>UF ${clpToUf(data.price, ufValueAsNumber)} / CLP ${parseToCLPCurrency(data?.price)}</h4>
+<p>REF: ${data.id}</p>
+<p>${data.commune != null && data.commune != undefined && data.commune != "" ? data.commune : "No registra comuna"}, ${data.region != null && data.region != undefined && data.region != "" ? data.region : "No registra región"}, Chile</p> `;
 
-//   <ul>
-//     <li>
-//       Excepturi numquam nihil cumque odio. Et voluptate
-//       cupiditate.
-//     </li>
+document.getElementById('caracteristica-prop').innerHTML = 
+`<h4>Caracteristicas</h4>
+<ul>
+  <li>
+    <p>Habitaciones</p>
+    <span>${data.bedrooms != null && data.bedrooms != undefined && data.bedrooms != "" ? data.bedrooms : "0"}</span>
+  </li>
+  <li>
+    <p>Estacionamientos</p>
+    <span>${data.coveredParkingLots != null && data.coveredParkingLots != undefined && data.coveredParkingLots != "" ? data.coveredParkingLots : "0"}</span>
+  </li>
+  <li>
+    <p>Baños</p>
+    <span>${data.bathrooms != null && data.bathrooms != undefined && data.bathrooms != "" ? data.bathrooms : "0"}</span>
+  </li>
+  <li>
+    <p>Superficie</p>
+    <span>${data.surface_m2 != null && data.surface_m2 != undefined && data.surface_m2 != "" ? data.surface_m2 : "0"}m<sup>2</sup></span>
+  </li>
+</ul>`;
 
-//     <li>Excepturi numquam nihil cumque oe.</li>
-
-//     <li>Excepturi numquam nihil cumque oe.</li>
-//   </ul>
-// </div>
-// </div>
-// <div class="col-sm-4">
-// <div class="sidebar">
-//   <div class="sidebar-item search-form">
-//     <h3 class="sidebar-title text-uppercase">
-//       Detalles de la Propiedad
-//     </h3>
-//   </div>
-
-//   <div class="sidebar-item categories">
-//     <h3 class="sidebar-title"> ${data.operation} - ${data.types}</h3>
-
-//     <ul class="mt-3">
-//       <li>
-//         <a href="#"
-//           >País <span class="text-dark">Chile</span></a
-//         >
-//       </li>
-//       <li>
-//         <a href="#"
-//           >Región
-//           <span class="text-dark">${data.region != null && data.region != undefined && data.region != "" ? data.region : "No registra región"}</span></a
-//         >
-//       </li>
-//       <li>
-//         <a href="#"
-//           >Ciudad <span class="text-dark">${data.commune  != null && data.commune != undefined && data.commune != "" ? data.commune : "No registra comuna"}</span></a
-//         >
-//       </li>
-//       <li>
-//         <a href="#"
-//           >Código <span class="text-dark">${data.id}</span></a
-//         >
-//       </li>
-//       <li>
-//         <a href="#"
-//           >Estado <span class="text-dark">${data.status}</span></a
-//         >
-//       </li>
-//       <li>
-//         <a href="#"
-//           >Superficie Construida
-//           <span class="text-dark">203 m<sup>${data.surface_m2 != null && data.surface_m2 != undefined && data.surface_m2 != "" ? data.surface_m2 : "0"}</sup></span></a
-//         >
-//       </li>
-//       <li>
-//         <a href="#"
-//           >Superficie Terreno
-//           <span class="text-dark">203 m<sup>${data.surface_m2 != null && data.surface_m2 != undefined && data.surface_m2 != "" ? data.surface_m2 : "0"}</sup></span></a
-//         >
-//       </li>
-//       <li>
-//         <a href="#"
-//           >Superficie Privada
-//           <span class="text-dark">203 m<sup>${data.surface_m2 != null && data.surface_m2 != undefined && data.surface_m2 != "" ? data.surface_m2 : "0"}</sup></span></a
-//         >
-//       </li>
-//       <li>
-//         <a href="#"
-//           >Habitaciones <span class="text-dark">${data.bedrooms != null && data.bedrooms != undefined && data.bedrooms != "" ? data.bedrooms : "0"}</span></a
-//         >
-//       </li>
-//       <li>
-//       <a href="#"
-//         >Habitaciones <span class="text-dark">${data.bathrooms != null && data.bathrooms != undefined && data.bathrooms != "" ? data.bathrooms : "0"}</span></a
-//       >
-//     </li>
-//       <li>
-//         <a href="#"
-//           >Estacionamientos
-//           <span class="text-dark">${data.coveredParkingLots != null && data.coveredParkingLots != undefined && data.coveredParkingLots != "" ? data.coveredParkingLots : "0"}</span></a
-//         >
-//       </li>
-//     </ul>
-//   </div> 
-// </div>
-// </div>
-// `
-// document.getElementById('info-ubicacion').innerHTML = `
-// <i class="fa-sharp fa-solid fa-location-dot"></i>
-// <span>${data.commune != null && data.commune != undefined && data.commune != "" ? data.commune : "No registra comuna"}, ${data.region != null && data.region != undefined && data.region != "" ? data.region : "No registra región"}, Chile</span>
-// `;
+document.getElementById('descrip-prop').innerHTML = 
+`<h4>Descripción</h4>
+<p>
+${data.description != null && data.description != undefined && data.description != "" ? data.description : "No registra descripción" }
+</p> `;
 
 }

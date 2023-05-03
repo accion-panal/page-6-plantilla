@@ -6,7 +6,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="author" content="Untree.co" />
 
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap4" />
@@ -29,6 +28,11 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+
+    <!-- MAPBOX CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+    <!--FIN MAPBOX CSS -->
 
     <title>Propiedades - Página básica 6</title>
   </head>
@@ -78,42 +82,46 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <select class="form-control" id="propertyType">
-                      <option>Tipo de Propiedad</option>
-                      <option>Tipo de Propiedad 1</option>
-                      <option>Tipo de Propiedad 2</option>
-                      <option>Tipo de Propiedad 3</option>
+                    <select class="form-control" id="typeOfProperty">
+                      <option value="" selected>Tipo de Propiedad</option>
+                      <option value="departamento">Departamento</option>
+                      <option value="casa">Casa</option>
+                      <option value="parcela">Parcela</option>
+                      <option value="bodega">Bodega</option>
+                      <option value="terreno">Terreno</option>
+                      <option value="estacionamiento">Estacionamiento</option>
+                      <option value="industrial">Industrial</option>
+                      <option value="agricola">Agricola</option>
+                      <option value="local">Local Comercial</option>
+                      <option value="oficina">Oficina</option>
+                      <option value="sitio">Sitio</option>
+                      <option value="Terreno En Construccion">Terreno En Construccion</option>
                     </select>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <select class="form-control" id="operationType">
-                      <option>Tipo de operación</option>
-                      <option>Tipo de operación 1</option>
-                      <option>Tipo de operación 2</option>
-                      <option>Tipo de operación 3</option>
+                      <option value="" selected>Tipo de Operación</option>
+                      <option value="venta" >Venta</option>
+                      <option value="arriendo" >Arriendo</option>
+                      <option value="arriendo_temporal" >Arriendo Temporal</option>
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
                     <select class="form-control" id="region">
-                      <option>Región</option>
-                      <option>Región 1</option>
-                      <option>Región 2</option>
-                      <option>Región 3</option>
+                      <option value="0">Región</option>
                     </select>
                   </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <select class="form-control" id="city">
-                      <option>Ciudad</option>
-                      <option>Ciudad 1</option>
-                      <option>Ciudad 2</option>
-                      <option>Ciudad 3</option>
+                    <select class="form-control" id="commune">
+                      <option value="" selected>Comuna</option>
+                  
                     </select>
                   </div>
                 </div>
@@ -121,10 +129,11 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <select class="form-control" id="bedrooms">
-                      <option>Habitaciones</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
+                      <option value="" selected>Habitaciones</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
                     </select>
                   </div>
                 </div>
@@ -132,24 +141,16 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <select class="form-control" id="bathrooms">
-                      <option>Baños</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
+                      <option value="" selected>Baños</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
                     </select>
                   </div>
                 </div>
 
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select class="form-control" id="bathrooms">
-                      <option>Estacionamientos</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                    </select>
-                  </div>
-                </div>
+       
                 <div
                   class="col-md-6 d-flex w-100 justify-content-around align-items-center"
                 >
@@ -181,41 +182,41 @@
                     </label>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select class="form-control" id="region">
-                      <option>Estacionamientos</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                    </select>
-                  </div>
-                </div>
-
                 <div class="col-md-6 d-flex flex-row">
                   <div class="form-group mx-1">
                     <input
-                      type="text"
+                      type="number"
                       class="form-control"
-                      id="price-from"
+                      id="min_price"
                       placeholder="Desde"
                     />
                   </div>
 
                   <div class="form-group mx-1">
                     <input
-                      type="text"
+                      type="number"
                       class="form-control"
-                      id="price-to"
+                      id="max-price"
                       placeholder="Hasta"
                     />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <select class="form-control" id="covered_parking_lots">
+                      <option value="" selected>Estacionamientos</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
                   </div>
                 </div>
 
  
 
                 <div class="col-md-12" style="display: flex;justify-content: end;">
-                  <button type="submit" class="btn btn-dark text-end">
+                  <button type="submit" id="buscar2" class="btn btn-dark text-end">
                     Buscar
                   </button>
                 </div>
@@ -233,11 +234,6 @@
 
     <div class="section-color section-properties" style="margin-top: -130px;">
       <div class="container">
-        <div class="row text-center justify-content-center mb-3">
-          <div class="col-lg-7">
-            <h2 class="section-title text-center">Propiedades destacadas</h2>
-          </div>
-        </div>
         <div class="row mb-5">
           <div class="col-lg-5">
             <div class="properties-meta" id="total-prop">
@@ -326,7 +322,7 @@
             aria-labelledby="grilla-tab"
           >
             <div class="section-header-properties">
-              <h3 class="title-carousel-properties">Casas</h3>
+              <h3 class="title-carousel-properties" id="typeProp">Tipos de propiedad</h3>
             </div>
             <div class="row">
               <div class="col-12">
@@ -343,15 +339,22 @@
               </div>
         
             </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="lista"
+            role="tabpanel"
+            aria-labelledby="lista-tab">
+            <!-- categoria casa -->
             <div class="section-header-properties">
-              <h3 class="title-carousel-properties">Departamento</h3>
+              <h3 class="title-carousel-properties">Casas</h3>
             </div>
             <div class="row">
               <div class="col-12">
                 <section class="splide" aria-label="Splide Basic HTML Example">
                   <div class="splide__track">
-                    <ul class="splide__list" id="container-propiedad-depa">
-                      <li class="splide__slide"></li>
+                    <ul class="splide__list" id="container-propiedad-list">
+                      <li class="splide__slide" ></li>
                     
                     </ul>
                   </div>
@@ -361,87 +364,8 @@
               </div>
         
             </div>
-            <!-- <div id="container-propiedad-casa" style="display: flex;justify-content: center;">
-              <!-- <div class="item" >
-                <div class="card" style="width: 200rem">
-                  <span class="uf-item-price">Casa / Arriendo</span>
-                  <img
-                    class="card-img-top img-fluid card-img"
-                    src="./images/property/property-1.jpg"
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <h3 class="card-title">
-                      Casa Amoblada, excelente ubicación
-                    </h3>
-                    <small class="card-text-small"
-                      >La Cruz, Valparaiso, Chile</small
-                    >
-                    <div class="info-property">
-                      <span class="card-more-info">Habitaciones: 1</span>
-                      <span class="card-more-info">Baños: 1</span>
-                    </div>
-                    <h3
-                      class="card-title"
-                      style="font-size: 28px; font-weight: 700"
-                    >
-                      UF 16.800
-                    </h3>
-
-                    <a href="detalle_propiedad.html" class="btn btn-dark"
-                      >Ver más...</a
-                    >
-                  </div>
-                </div>
-              </div> 
-            </div> -->
-              <!-- <div class="item">
-                <div class="card" style="width: 20rem">
-                  <span class="uf-item-price">Departamento / Arriendo</span>
-                  <img
-                    class="card-img-top img-fluid card-img"
-                    src="./images/property/property-1.jpg"
-                    alt="Card image cap"
-                  />
-                  <div class="card-body">
-                    <h3 class="card-title">
-                      Casa Amoblada, excelente ubicación
-                    </h3>
-                    <small class="card-text-small"
-                      >La Cruz, Valparaiso, Chile</small
-                    >
-                    <div class="info-property">
-                      <span class="card-more-info">Habitaciones: 1</span>
-                      <span class="card-more-info">Baños: 1</span>
-                    </div>
-                    <h3
-                      class="card-title"
-                      style="font-size: 28px; font-weight: 700"
-                    >
-                      UF 16.800
-                    </h3>
-                    >
-
-                    <a href="detalle_propiedad.html" class="btn btn-dark"
-                      >Ver más...</a
-                    >
-                  </div>
-                </div>
-              </div> -->
-           <!-- fin card tarjetas -->
-          <!-- Card lista -->
-          <div
-            class="tab-pane fade"
-            id="lista"
-            role="tabpanel"
-            aria-labelledby="lista-tab"
-          >
-            <!-- categoria casa -->
-            <div class="section-header-properties">
-              <h3 class="title-carousel-properties">Casas</h3>
-            </div>
-            <div id="container-propiedad-lista-casa">
-              <!-- <div class="item">
+       
+             <!-- <div class="item">
                 <div class="card" style="width:100%;">
                 <div class="row">
                   <div class="col-sm-5">
@@ -479,8 +403,7 @@
                   </div>
                 </div>
                 </div>
-              </div> -->
-            </div>
+              </div> --> 
             <!-- fin categoria casa -->
     
             <!-- categoria depart -->
@@ -648,12 +571,13 @@
             <!-- fin categoria depart -->
           </div>
           <div
-            class="tab-pane fade"
+            class="tab-pane fade active"
             id="map"
             role="tabpanel"
             aria-labelledby="map-tab"
           >
-            jeeejee
+          <div id="map"></div> 
+
           </div>
         </div>
       </div>
@@ -822,8 +746,14 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 		<!-- <script type="module" src="js/utils/apiCarousel.js"></script> -->
-		<script type="module" src="js/index.js"></script>
-		<script type="module" src="js/index2.js"></script>
+		<script type="module" src="js/propiedad/apiCarouselCasa.js"></script>
+		<script type="module" src="js/mapProp.js"></script>
+		<script type="module" src="js/utils/filterOnSubmit.js"></script>
+		<script type="module" src="js/utils/filterOnSubmitIndex.js"></script>
+		<script type="module" src="js/utils/getSelects.js"></script>
+
+
+
 
     <!-- <script type="module" src="js/detalle_prop.js"></script> -->
     <script type="module" src="js/utils/getExchangeRate.js"></script>

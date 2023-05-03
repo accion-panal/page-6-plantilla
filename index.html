@@ -75,42 +75,46 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <select class="form-control" id="propertyType">
-                      <option>Tipo de Propiedad</option>
-                      <option>Tipo de Propiedad 1</option>
-                      <option>Tipo de Propiedad 2</option>
-                      <option>Tipo de Propiedad 3</option>
+                    <select class="form-control" id="typeOfProperty">
+                      <option value="" selected>Tipo de Propiedad</option>
+                      <option value="departamento">Departamento</option>
+                      <option value="casa">Casa</option>
+                      <option value="parcela">Parcela</option>
+                      <option value="bodega">Bodega</option>
+                      <option value="terreno">Terreno</option>
+                      <option value="estacionamiento">Estacionamiento</option>
+                      <option value="industrial">Industrial</option>
+                      <option value="agricola">Agricola</option>
+                      <option value="local">Local Comercial</option>
+                      <option value="oficina">Oficina</option>
+                      <option value="sitio">Sitio</option>
+                      <option value="Terreno En Construccion">Terreno En Construccion</option>
                     </select>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <select class="form-control" id="operationType">
-                      <option>Tipo de operación</option>
-                      <option>Tipo de operación 1</option>
-                      <option>Tipo de operación 2</option>
-                      <option>Tipo de operación 3</option>
+                      <option value="" selected>Tipo de Operación</option>
+                      <option value="venta" >Venta</option>
+                      <option value="arriendo" >Arriendo</option>
+                      <option value="arriendo_temporal" >Arriendo Temporal</option>
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
                     <select class="form-control" id="region">
-                      <option>Región</option>
-                      <option>Región 1</option>
-                      <option>Región 2</option>
-                      <option>Región 3</option>
+                      <option value="0">Región</option>
                     </select>
                   </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <select class="form-control" id="city">
-                      <option>Ciudad</option>
-                      <option>Ciudad 1</option>
-                      <option>Ciudad 2</option>
-                      <option>Ciudad 3</option>
+                    <select class="form-control" id="commune">
+                      <option value="" selected>Comuna</option>
+                  
                     </select>
                   </div>
                 </div>
@@ -118,10 +122,11 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <select class="form-control" id="bedrooms">
-                      <option>Habitaciones</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
+                      <option value="" selected>Habitaciones</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
                     </select>
                   </div>
                 </div>
@@ -129,24 +134,16 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <select class="form-control" id="bathrooms">
-                      <option>Baños</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
+                      <option value="" selected>Baños</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
                     </select>
                   </div>
                 </div>
 
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select class="form-control" id="bathrooms">
-                      <option>Estacionamientos</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                    </select>
-                  </div>
-                </div>
+       
                 <div
                   class="col-md-6 d-flex w-100 justify-content-around align-items-center"
                 >
@@ -158,7 +155,6 @@
                       name="exampleRadios"
                       id="exampleRadios1"
                       value="option1"
-                      checked
                     />
                     <label class="form-check-label" for="exampleRadios1">
                       UF
@@ -172,47 +168,48 @@
                       name="exampleRadios"
                       id="exampleRadios2"
                       value="option2"
+                      checked
                     />
                     <label class="form-check-label" for="exampleRadios2">
                       CLP
                     </label>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <select class="form-control" id="region">
-                      <option>Estacionamientos</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                    </select>
-                  </div>
-                </div>
-
                 <div class="col-md-6 d-flex flex-row">
                   <div class="form-group mx-1">
                     <input
-                      type="text"
+                      type="number"
                       class="form-control"
-                      id="price-from"
+                      id="min_price"
                       placeholder="Desde"
                     />
                   </div>
 
                   <div class="form-group mx-1">
                     <input
-                      type="text"
+                      type="number"
                       class="form-control"
-                      id="price-to"
+                      id="max_price"
                       placeholder="Hasta"
                     />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <select class="form-control" id="covered_parking_lots">
+                      <option value="" selected>Estacionamientos</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
                   </div>
                 </div>
 
  
 
                 <div class="col-md-12" style="display: flex;justify-content: end;">
-                  <button type="submit" class="btn btn-dark text-end">
+                  <button type="submit" id="buscar" class="btn btn-dark text-end">
                     Buscar
                   </button>
                 </div>
@@ -572,6 +569,12 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="js/utils/getExchangeRate.js"></script>
     <script type="module" src="js/propiedad/apiCarouselDestacadas.js"></script>
+		<script type="module" src="js/utils/filterOnSubmit.js"></script>
+		<script type="module" src="js/utils/filterOnSubmitIndex.js"></script>
+
+
+		<script type="module" src="js/utils/getSelects.js"></script>
+
 
   </body>
 </html>

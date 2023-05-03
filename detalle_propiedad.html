@@ -6,7 +6,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="author" content="Untree.co" />
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap4" />
 
@@ -16,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
@@ -26,6 +26,11 @@
     <link rel="stylesheet" href="css/daterangepicker.css" />
     <link rel="stylesheet" href="css/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+     <!-- MAPBOX CSS -->
+     <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
+     <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+     <!--FIN MAPBOX CSS -->
 
     <title>Propiedad - Página básica 6</title>
   </head>
@@ -74,9 +79,9 @@
             <h2 class="section-title text-center">Propiedad Detalles</h2>
           </div>
         </div>
-        <div class="properties-meta">
-          <span>Casa amoblada, excelente ubicación</span>
-          <small>Casa / Arriendo</small>
+        <div class="properties-meta" id="titleProp">
+          <!-- <span>Casa amoblada, excelente ubicación</span>
+          <small>Casa / Arriendo</small> -->
         </div>
 
         <div class="row">
@@ -144,10 +149,10 @@
 
       <div class="container">
         <div class="row property-details">
-          <div class="col-md-4">
-            <h4>UF 16.800 / CLP 565.678.982</h4>
+          <div class="col-md-4" id="extra-prop">
+            <!-- <h4>UF 16.800 / CLP 565.678.982</h4>
             <p>REF: 543432443</p>
-            <p>La Cruz, Valparaíso, Chile</p>
+            <p>La Cruz, Valparaíso, Chile</p> -->
           </div>
           <div class="col-md-8" >
             <div class="row contact-agent-section">
@@ -181,26 +186,26 @@
                 <div class="row">
                   <div class="col-sm-12 contact-agent-section__contact-info">
                     <h4 class="mb-5">Contactar al corredor</h4>
-                    <form style="width:90%;">
+                    <form style="width:90%;" method="post" id="form-realtor" name="FormSubmit">
                       <div class="row">
                         <div class="col-md-12" >
                           <div class="form-group mb-4">
-                            <input class="form-control" type="text" id="" name="" placeholder="Nombre">
+                            <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre" value="Nombre">
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group mb-4">
-                            <input class="form-control" type="email" id="" name="" placeholder="E-mail">
+                            <input class="form-control" type="email" id="email" name="email" placeholder="E-mail" value="E-mail">
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group mb-4">
-                            <input class="form-control" type="text" id="" name="" placeholder="Asunto">
+                            <input class="form-control" type="text" id="sujeto" name="sujeto" placeholder="Asunto" value="Asunto">
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group mb-4">
-                            <textarea placeholder="Mensaje" cols="3" class="form-control" id="" name=""></textarea>
+                            <textarea placeholder="Mensaje" cols="3" class="form-control" id="mensaje" name="Mensaje" value="Mensaje"></textarea>
                           </div>
                         </div>
                         <div class="col-md-12" style="display: flex;justify-content: end;">
@@ -210,7 +215,7 @@
                         </div>
                       </div>
                     </form>
-
+                    <div id="respuesta"></div>
                   </div>
                 </div>           
               </div>
@@ -220,9 +225,9 @@
       </div>
 
       <div class="container ">
-        <div class="row">
-          <div class="col-md-4 property-details-info">
-            <h4>Descripción</h4>
+        <div class="row" >
+          <div class="col-md-4 property-details-info" id="caracteristica-prop">
+            <!-- <h4>Caracteristicas</h4>
             <ul>
               <li>
                 <p>Habitaciones</p>
@@ -244,9 +249,10 @@
                 <p>Adicional</p>
                 <span>Piscina</span>
               </li>
-            </ul>
+            </ul> -->
           </div>
-          <div class="col-md-8 property-details-info">
+          <div class="col-md-8 property-details-info" id="descrip-prop">
+            <!-- <h4>Descripción</h4>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
               corrupti tenetur vel quaerat. Est illum asperiores earum quos?
@@ -262,7 +268,7 @@
               consectetur adipisicing elit. Porro corrupti tenetur vel quaerat.
               Est illum asperiores earum quos? Voluptate praesentium quod est
               voluptates doloribus, beatae ab! Eum assumenda facilis expedita.
-            </p>
+            </p> -->
             <h3>Requisitos</h3>
             <ul class="property-requerimients">
               <li>
@@ -285,7 +291,9 @@
       <div class="container">
         <div class="section-title">
           <h2 class="section-title text-center">Ubicación</h2>
-          <div class="iframe-rwd">
+          <div id="map" style="height: 50vh !important;"></div>
+
+          <!-- <div class="iframe-rwd">
             <iframe
               width="425"
               height="350"
@@ -302,7 +310,7 @@
                 >View Larger Map</a
               ></small
             >
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -410,7 +418,7 @@
     <script src="js/daterangepicker.js"></script>
 
     <script src="js/typed.js"></script>
-    <script>
+    <!-- <script>
       $(function () {
         var slides = $('.slides'),
           images = slides.find('img');
@@ -441,8 +449,14 @@
           },
         });
       });
-    </script>
+    </script> -->
 
     <script src="js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script type="module" src="js/utils/PostContactDetail.js"></script>
+		<script type="module" src="js/utils/SendEmailDetail.js"></script>
+		<script type="module" src="js/detalle_prop.js"></script>
+		<script type="module" src="js/MapPropDetail.js"></script>
+
   </body>
 </html>
