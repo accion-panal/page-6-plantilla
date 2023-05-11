@@ -150,8 +150,8 @@ document.getElementById("buscar")?.addEventListener("click", async () => {
 
   const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
   console.log(filtred);
-	document.getElementById("total-prop").innerHTML = `<div>${filtred.meta.totalItems} Propiedades encontradas
-	</div>`;
+	document.getElementById("total-prop").innerHTML = `<span>${filtred.meta.totalItems} Propiedades encotradas
+	</span>`;
 	setTimeout(() => {
 		document.getElementById("buscar2").innerHTML = `Buscar`;
 		window.scroll({

@@ -17,7 +17,7 @@ const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
 
 document.getElementById("total-prop").innerHTML = `<span>De 1 a ${response.meta.totalItems} propiedades encontradas</span> `;
 
-document.getElementById('typeProp').innerHTML =`<span>${response.meta.totalItems} propiedades</span> `
+// document.getElementById('typeProp').innerHTML =`<span>Propiedades</span> `
 
 document.getElementById('container-propiedad-casa').innerHTML = data.map(data => 
       `<li class="splide__slide" style="width: 550px;">	  

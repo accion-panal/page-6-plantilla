@@ -4,6 +4,8 @@ import	ExchangeRateServices from  "../services/ExchangeRateServices.js";
 
 import {parseToCLPCurrency, clpToUf} from "../utils/getExchangeRate.js"
 
+
+
 export default async function apiDetalleCall(id, statusId, companyId){
     let {data} = await getPropertiesForId(id, statusId, companyId );
 
@@ -17,54 +19,31 @@ let img;
 
 // console.log(id); // Imprimirá "134" si ese es el valor actual del parámetro "id"
 
-// data.images.forEach((images, index) => {img +=
-//     ` <div class="carousel-item ${ index == 0 ? "active" : ""} ">
-//         <img src="${images != undefined && images != null && images != "" ? images : "/img/Sin.png"}" />
-//      </div> 	
-//     `
-//     indicator += `
-//     <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="${index}" ${index == 0 ? "class = active": ""} aria-current="true" aria-label="${index + 1}"></button>
-//     `
-//     })
+data.images.forEach((images, index) => {img +=
+    ` <li class="splide__slide" ${ index == 0 ? "active" : ""}" >
+        <img src="${images != undefined && images != null && images != "" ? images : "/img/Sin.png"}" style="height:600px;width:95%;" />
+      </li>
+    `
+    // indicator += `
+    // <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="${index}" ${index == 0 ? "class = active": ""} aria-current="true" aria-label="${index + 1}"></button>
+    // `
+    })
+
+document.getElementById('carusel-detail-prop').innerHTML = 
+`
+<li class="splide__slide">${img}</li>
+`;
+
+    var splide = new Splide( '.splide', {
+      direction: 'ttb',
+      height   : '35rem',
+      type: 'loop',
+      
+    } );
+    
+    splide.mount();
 
 
-
-
-// document.getElementById('container-carrucel-imgProps').innerHTML = 
-// `
-// <div
-//           id="hero-carousel"
-//           class="carousel slide"
-//           data-bs-ride="carousel"
-//           data-bs-interval="5000"
-//           style="height: 80vh !important;"
-//         >
-//          </div>
-            
-//           <a
-//             class="carousel-control-prev"
-//             href="#hero-carousel"
-//             role="button"
-//             data-bs-slide="prev"
-//           >
-//             <span
-//               class="carousel-control-prev-icon bi bi-chevron-left"
-//               aria-hidden="true"
-//             ></span>
-//           </a>
-//           <a
-//             class="carousel-control-next"
-//             href="#hero-carousel"
-//             role="button"
-//             data-bs-slide="next"
-//           >
-//             <span
-//               class="carousel-control-next-icon bi bi-chevron-right"
-//               aria-hidden="true"
-//             ></span>
-//           </a>
-//         </div>
-// `
 
 document.getElementById('titleProp').innerHTML = 
 `<span>${data.title}</span>
@@ -103,3 +82,10 @@ ${data.description != null && data.description != undefined && data.description 
 </p> `;
 
 }
+document.addEventListener("DOMContentLoaded", function () {
+	let splide = new Splide(".splide");
+	splide.mount();
+});
+
+// apiDetalleCall();
+
