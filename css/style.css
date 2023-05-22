@@ -22,6 +22,21 @@
   --bg-primary-opacity: #1e8bffcc;
   --bg-secundary-opacity: #0c0c0c62;
 
+  /*Colores ajustables  */
+  --color-primary: #1e8bff;
+  --color-secundary: #7d858c;
+  --color-info: #1d1d1d;
+  --color-success: #ffffff;
+
+  /*Colores ajustables con opacidad  */
+  --color-primary-opacity: #1e8bffd4;
+  --color-secundary-opacity: #7d858cd4;
+  --color-info-opacity: #1d1d1dd4;
+  --color-success-opacity: #ffffffd4;
+    
+
+
+
   /* Font size */
   --font-size-2xl: 2.2rem;
   --font-size-xxl: 2rem;
@@ -259,7 +274,7 @@ h4,
   top: 0;
   z-index: 9;
   width: 100%;
-  background-color: var(--bg-white);
+  background-color: var(--color-success);
 }
 
 .site-nav {
@@ -868,21 +883,21 @@ h4,
 
 .hero .hero-content form {
   border-radius: 25px;
-  background-color: var(--bg-white);
+  background-color: var(--color-success);
   padding: 3rem 2rem;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .hero .hero-content form input {
   background-color: transparent;
-  border: 2.5px solid var(--bg-dark);
+  border: 2.5px solid var(--color-info);
   border-radius: 25px;
   color: var(--text-dark);
 }
 
 .hero .hero-content form select {
   background-color: transparent;
-  border: 2.5px solid var(--bg-dark);
+  border: 2.5px solid var(--color-info);
   border-radius: 25px;
   color: var(--text-dark);
   appearance: none;
@@ -901,7 +916,7 @@ h4,
 
 .hero .hero-content form button {
   padding: 0.6rem 2rem;
-  border: 2px solid var(--bg-dark);
+  border: 2px solid var(--color-info);
 }
 
 .hero .hero-content .main-search-title h2 {
@@ -1846,7 +1861,7 @@ h4,
 /* Footer */
 
 .footer-section {
-  background-color: var(--bg-dark);
+  background-color: var(--color-info);
 }
 
 .footer-section .footer-logo {
@@ -2011,7 +2026,7 @@ h4,
 }
 
 .property-details .contact-agent-section {
-  background-color: var(--bg-dark);
+  background-color: var(--color-info);
   display: flex;
   justify-content: center;
   padding: 0.5rem;
@@ -2027,7 +2042,7 @@ h4,
   color: var(--text-dark);
   display: block;
   padding: 0.5rem;
-  border-left: 3px solid orange;
+  border-left: 3px solid var(--color-secundary);
 }
 
 /* .contact-agent-section .row {
@@ -2221,7 +2236,7 @@ iframe {
 
 .section-intranet .container form,
 .section-contact .container form {
-  background-color: var(--bg-white);
+  background-color: var(--color-success);
   width: 100%;
   padding: 2rem;
   border-radius: 25px;
@@ -2264,7 +2279,7 @@ iframe {
 
 .section-intranet .container form button,
 .section-contact .container form button {
-  background-color: var(--bg-dark);
+  background-color: var(--color-info);
   color: var(--text-white);
   border: none;
   border-radius: 25px;
@@ -2287,7 +2302,7 @@ iframe {
 }
 
 .btnNavActive{
-  background: rgb(22, 22, 22); 
+  background: var(--color-info); 
   padding: 0 10px 0 10px;
   border-radius: 25px;
 }

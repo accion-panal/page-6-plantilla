@@ -6,11 +6,15 @@ formEmail.addEventListener('submit', function(e) {
 
 
 let firstName = document.getElementById('nombre');
-let email = document.getElementById('email');
+let receptEmail = document.getElementById('email');
 let subject = document.getElementById('sujeto');
 let phone = document.getElementById('phone');
 let message = document.getElementById('mensaje');
 
+
+// const data = {
+//   receptEmail
+// }
 
 fetch("https://formsubmit.co/ajax/fabian.salas.astete@gmail.com", {
   method: "POST",
@@ -20,7 +24,7 @@ fetch("https://formsubmit.co/ajax/fabian.salas.astete@gmail.com", {
   },
   body: JSON.stringify({
     Nombre: firstName.value,
-    Correo: email.value,
+    Correo: receptEmail.value,
     Telefono: phone.value,
     Sujeto: subject.value,
     Mensaje: message.value,

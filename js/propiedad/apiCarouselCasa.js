@@ -20,7 +20,7 @@ document.getElementById("total-prop").innerHTML = `<span>De 1 a ${response.meta.
 // document.getElementById('typeProp').innerHTML =`<span>Propiedades</span> `
 
 document.getElementById('container-propiedad-casa').innerHTML = data.map(data => 
-      `<li class="splide__slide" style="width: 550px;">	  
+      `<li class="splide__slide" >	  
             <div class="item" >
                 <div class="card" style="width: 20rem; margin: 0px 10px 0px 10px;height:530px !important">
                     <span class="uf-item-price">${data.types} / ${data.operation} </span>
@@ -107,6 +107,9 @@ document.getElementById('container-propiedad-list').innerHTML = data.map(data =>
         type: "loop",
         autoplay: "play",
         perPage: 3,
+        focus : 'center',
+        autoWidth: true,
+        
     });
     splide.mount();
 

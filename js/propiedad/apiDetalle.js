@@ -21,7 +21,7 @@ let img;
 
 data.images.forEach((images, index) => {img +=
     ` <li class="splide__slide" ${ index == 0 ? "active" : ""}" >
-        <img src="${images != undefined && images != null && images != "" ? images : "/img/Sin.png"}" style="height:600px;width:95%;" />
+        <img src="${images != undefined && images != null && images != "" ? images : "/img/Sin.png"}" style="height:592px;width:98%;" />
       </li>
     `
     // indicator += `
@@ -36,8 +36,9 @@ document.getElementById('carusel-detail-prop').innerHTML =
 
     var splide = new Splide( '.splide', {
       direction: 'ttb',
-      height   : '35rem',
+      height   : '32rem',
       type: 'loop',
+      focus: 'center'
       
     } );
     
