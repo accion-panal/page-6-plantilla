@@ -61,6 +61,7 @@ function showItems() {
                     <div class="info-property">
                         <span class="card-more-info">Habitaciones:   ${data.bedroom != undefined && data.bedroom != "" && data.bedroom != null ? data.bedroom : "0"}</span>
                         <span class="card-more-info">Baños:   ${data.bathrooms != undefined && data.bathrooms != "" && data.bathrooms != null ? data.bathrooms : "0"}</span>
+                        <span class="card-more-info">COD:   ${data.id}</span>
                     </div>
                     <h3
                         class="card-title"
