@@ -197,9 +197,12 @@ document.getElementById("buscar")?.addEventListener("click", async () => {
         </li>`).join("");
 
         let splide = new Splide(".splide", {
-            type: "loop",
-            autoplay: "play",
-            perPage: 3,
+          autoplay: "play",
+          focus: 0,
+          omitEnd: true,
+          perPage: 3,
+
+            
         });
         splide.mount();
 
