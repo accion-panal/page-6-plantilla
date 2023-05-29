@@ -14,12 +14,34 @@ const response2 = await ExchangeRateServices.getExchangeRateUF();
 const ufValue = response2?.UFs[0]?.Valor
 const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
 
+const filtroSelect = document.getElementById('FilterPrice');
+filtroSelect.addEventListener('change', handleFilterChange);
+showItems();
+
+function handleFilterChange() {
+const selectedValue = filtroSelect.value;
+console.log(selectedValue);
+console.log(data);
+
+let dataOrdenada;
+
+if (selectedValue === 'MayorMenor') {
+    /* console.log('La opción seleccionada es MayorMenor'); */
+    dataOrdenada = data.sort((a, b) => b.price - a.price);
+} else {
+    /* console.log('La opción seleccionada es Menor mayor'); */
+    dataOrdenada = data.sort((a, b) => a.price - b.price);
+}
+console.log(dataOrdenada);
+showItems();
+}
 
 document.getElementById("total-prop").innerHTML = `<span>De 1 a ${response.meta.totalItems} propiedades encontradas</span> `;
 
 // document.getElementById('typeProp').innerHTML =`<span>Propiedades</span> `
 
-document.getElementById('container-propiedad-casa').innerHTML = data.map(data => 
+function showItems() {
+    document.getElementById('container-propiedad-casa').innerHTML = data.map(data => 
       `<li class="splide__slide" >	  
             <div class="item" >
                 <div class="card" style="width: 20rem; margin: 0px 10px 0px 10px;height:530px !important">
@@ -39,6 +61,7 @@ document.getElementById('container-propiedad-casa').innerHTML = data.map(data =>
                     <div class="info-property">
                         <span class="card-more-info">Habitaciones:   ${data.bedroom != undefined && data.bedroom != "" && data.bedroom != null ? data.bedroom : "0"}</span>
                         <span class="card-more-info">Baños:   ${data.bathrooms != undefined && data.bathrooms != "" && data.bathrooms != null ? data.bathrooms : "0"}</span>
+                        <span class="card-more-info">COD:   ${data.id}</span>
                     </div>
                     <h3
                         class="card-title"
@@ -100,27 +123,31 @@ document.getElementById('container-propiedad-list').innerHTML = data.map(data =>
 
 `).join('');
 
+let splide = new Splide(".splide", {
+    type: "loop",
+    autoplay: "play",
+    perPage: 3,
+    focus : 'center',
+    autoWidth: true,
+    
+});
+splide.mount();
+
+// let splideList = new Splide(".splide", {
+//     type: "loop",
+//     autoplay: "play",
+//     perPage: 3,
+
+    
+// });
+// splideList.mount();
+}
 
 
 
-    let splide = new Splide(".splide", {
-        type: "loop",
-        autoplay: "play",
-        perPage: 3,
-        focus : 'center',
-        autoWidth: true,
-        
-    });
-    splide.mount();
 
-    // let splideList = new Splide(".splide", {
-    //     type: "loop",
-    //     autoplay: "play",
-    //     perPage: 3,
 
-        
-    // });
-    // splideList.mount();
+    
 
 
 
