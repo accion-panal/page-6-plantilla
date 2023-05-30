@@ -52,7 +52,7 @@ function showItems() {
                     alt="Card image cap"
                     />
                     <div class="card-body">
-                    <h3 class="card-title">
+                    <h3 class="card-title textLimitClass">
                         ${data.title} 
                     </h3>
                     <small class="card-text-small"
