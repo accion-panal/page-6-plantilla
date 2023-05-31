@@ -15,7 +15,7 @@ const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
 document.getElementById('carousel_').innerHTML = filtrado.map(data => 
     `				
     <li class="splide__slide" style="width: 550px">	  
-    <div class="item" >
+    <div class="item" style="display:flex;justify-content:center">
           <div class="card" style="width: 20rem; margin: 0px 10px 0px 10px">
               <span class="uf-item-price">${data.types} / ${data.operation} </span>
               <img
@@ -53,6 +53,14 @@ document.getElementById('carousel_').innerHTML = filtrado.map(data =>
 		type: "loop",
 		autoplay: "play",
 		perPage: 3,
+        breakpoints: {
+            1399: {
+              perPage: 2,
+            },
+            991: {
+              perPage: 1,
+            }
+          }
 	});
     splide.mount();
 }
