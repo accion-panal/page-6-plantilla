@@ -2005,7 +2005,20 @@ h4,
 
 
 .item{
-  height: 540px !important;
+  height: 100% !important;
+}
+
+.item-list{
+  height: 280px !important;
+  width: 95% !important;
+  margin: 5px !important;
+  -webkit-box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.38); 
+  box-shadow: 5px 5px 6px 3px rgba(0,0,0,0.38);
+}
+.item-list .card-img-top {
+  width: 100% !important;
+  height: 290px !important;
+  object-fit: cover !important;
 }
 
 
@@ -2342,5 +2355,18 @@ iframe {
 }
 
 .textLimitClass:hover{
+  display: block !important;
+}
+
+
+.textLimitDireccion{
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  
+}
+
+.textLimitDireccion:hover{
   display: block !important;
 }

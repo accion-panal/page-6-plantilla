@@ -1,9 +1,12 @@
 import { getProperties} from "../services/PropertiesServices.js";
 
+import { PropertyData } from "../Data/userId.js";
+
 
 
 export default async function apiCallMap() {
 
+    const {realtorId, companyId, CodigoUsuarioMaestro} = PropertyData;
 
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2VyZ2lvdmVyYWhlcm5hbmRlemJpZGF0YSIsImEiOiJjbDMwZHc4cmswMDdqM2NydmIzYWF0cGl4In0.hsYQFPebleAB4j6mRckMzQ'
     const map = new mapboxgl.Map({
@@ -13,11 +16,11 @@ export default async function apiCallMap() {
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-70.680628,-33.469970],
         // projection: 'globe',
-        zoom:5,
+        zoom:7,
 
     });
 
-    let {data} = await getProperties(0,1,1);
+    let {data} = await getProperties(1,10,CodigoUsuarioMaestro,companyId,1,realtorId);
     const promiseMap = new Promise(
         (resolve)=>{
         data.map(data => {
@@ -34,7 +37,7 @@ export default async function apiCallMap() {
                 <span>${data.title}</span>
                 <br>
                 <br>
-                <a href="/detalle_propiedad.html?${data.id}&statusId=${1}&companyId=${1}" class="btn btn-dark">Ver más...</a>`)
+                <a href="/detalle_propiedad.html?${data.id}&realtorId=${realtorId}&statusId=${1}&companyId=${companyId}" class="btn btn-dark">Ver más...</a>`)
 
                 // create DOM element for the marker
                 const el = document.createElement('div');

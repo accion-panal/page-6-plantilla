@@ -1,14 +1,19 @@
+import { RealtorSendEmailData } from "../Data/userId";
+
+
 const formEmailRealtor = document.getElementById("form-realtor");
 
 formEmailRealtor.addEventListener('submit', function(e) {
     e.preventDefault();
+
+let realtorMail = RealtorSendEmailData.sendEmail;
 
 let firstName = document.getElementById('nombre');
 let email = document.getElementById('email');
 let subject = document.getElementById('sujeto');
 let message = document.getElementById('mensaje');   
  
- fetch("https://formsubmit.co/ajax/fabian.salas.astete@gmail.com", {
+ fetch(`https://formsubmit.co/ajax/${realtorMail}`, {
     method: "POST",
     headers: { 
         'Content-Type': 'application/json',

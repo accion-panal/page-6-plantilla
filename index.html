@@ -54,7 +54,7 @@
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="propiedad.html">Propiedades</a></li>
             <li><a href="contacto.html">Contáctanos</a></li>
-            <li><a href="intranet.html">Intranet</a></li>
+            <li><a href="http://190.114.255.247:195/">Intranet</a></li>
           </ul>
           <a
             href="#"
@@ -205,11 +205,8 @@
                     </select>
                   </div>
                 </div>
-
- 
-
                 <div class="col-md-12" style="display: flex;justify-content: end;">
-                  <button type="submit" id="buscar" class="btn btn-dark text-end">
+                  <button type="button" id="buscar" class="btn btn-dark text-end">
                     Buscar
                   </button>
                 </div>
@@ -448,7 +445,7 @@
               </li>
               <li class="text">
                 <a
-                  href="intranet.html"
+                  href="http://190.114.255.247:195/"
                   style="color: #fff !important; font-size: 18px"
                   >Intranet</a
                 >
@@ -460,19 +457,17 @@
             <div class="contact-info">
               <h4>Contacto</h4>
               <ul>
-                <li>
-                  <i class="icon-map-marker"></i>
-                  <span class="text"
-                    >RentalProps Spa Apoquindo 6410 Of. 605, Las Condes</span
-                  >
+                <li id="footer-address-ContactInfo">
+                  <!-- <i class="icon-map-marker"></i> -->
+                  <!-- <span class="text">RentalProps Spa Apoquindo 6410 Of. 605, Las Condes</span> -->
                 </li>
-                <li>
-                  <i class="icon-phone"></i>
-                  <span class="text">+56 9 1234 5678</span>
+                <li id="footer-phone-ContactInfo">
+                  <!-- <i class="icon-phone"></i> -->
+                  <!-- <span class="text">+56 9 1234 5678</span> -->
                 </li>
-                <li>
-                  <i class="icon-message"></i>
-                  <span class="text">contacto@rentalprop.cl</span>
+                <li id="footer-email-ContactInfo">
+                  <!-- <i class="icon-message"></i>
+                  <span class="text">contacto@rentalprop.cl</span> -->
                 </li>
               </ul>
             </div>
@@ -568,12 +563,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="js/utils/getExchangeRate.js"></script>
-    <script type="module" src="js/propiedad/apiCarouselDestacadas.js"></script>
-		<script type="module" src="js/utils/filterOnSubmit.js"></script>
-		<script type="module" src="js/utils/filterOnSubmitIndex.js"></script>
+    <script type="module" src="js/prop_destacada.js"></script>
+		<!-- <script type="module" src="js/utils/filterOnSubmit.js"></script>
+		<script type="module" src="js/utils/filterOnSubmitIndex.js"></script> -->
+	  <script type="module" src="js/Data/ContactInfo.js"></script>
+
 
 
 		<script type="module" src="js/utils/getSelects.js"></script>
+		<script type="module" src="js/utils/filterOnSearchIndex.js"></script>
 
 
   </body>

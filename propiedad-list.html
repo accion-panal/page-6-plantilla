@@ -260,7 +260,7 @@
             <li class="nav-item" role="presentation">
               <a href="propiedad.html">
                   <button
-                  class="btn btn-light active"
+                  class="btn btn-light "
                   id="grilla-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#grilla"
@@ -275,7 +275,7 @@
             <li class="nav-item" role="presentation">
               <a href="propiedad-list.html">
               <button
-                class="btn btn-light"
+                class="btn btn-light active"
                 id="lista-tab"
                 data-bs-toggle="tab"
                 data-bs-target="#lista"
@@ -307,25 +307,24 @@
           </ul>
           </div>
         </div>
-           <!-- card tarjetas -->
+
+
+        <div class="tab-pane fade active show" id="lista" role="tabpanel" aria-labelledby="lista-tab">
             <div class="section-header-properties">
-              <h3 class="title-carousel-properties" id="typeProp">Tipos de propiedad</h3>
+              <h3 class="title-carousel-properties">Tipos de propiedad</h3>
             </div>
             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="col-12">
                 <section class="splide" aria-label="Splide Basic HTML Example">
                   <div class="splide__track">
-                    <ul class="splide__list" id="container-propiedad-grilla">
-                      <li class="splide__slide"></li>
+                    <ul class="splide__list" id="container-propiedad-list">
+                      <li class="splide__slide" ></li>
                     
                     </ul>
                   </div>
                 </section>
-              </div>       
+              </div>
             </div>
-            <div id="pagination-col"></div>
-          </div>
-        
         </div>
       </div>
     </div>
@@ -456,7 +455,7 @@
     <script src="js/daterangepicker.js"></script>
 
     <script src="js/typed.js"></script>
-    <!-- <script>
+    <script>
       $(function () {
         var slides = $(".slides"),
           images = slides.find("img");
@@ -486,11 +485,12 @@
         //     $('.slides img[data-id="' + arrayPos + '"]').addClass("active");
         //   },
         // });
-      }); -->
+      });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 		<script type="module" src="js/index.js"></script>
-		<script type="module" src="js/utils/pagination.js"></script>
+		<!-- <script type="module" src="js/pagination.js"></script> -->
 		<script type="module" src="js/utils/getSelects.js"></script>
 	  <script type="module" src="js/utils/filterOnSearch.js"></script>
 	  <script type="module" src="js/Data/ContactInfo.js"></script>

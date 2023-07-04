@@ -52,7 +52,7 @@
             <li class="active btnNavActive"><a href="nosotros.html">Nosotros</a></li>
             <li><a href="propiedad.html">Propiedades</a></li>
             <li><a href="contacto.html">Contáctanos</a></li>
-            <li><a href="intranet.html">Intranet</a></li>
+            <li><a href="http://190.114.255.247:195/">Intranet</a></li>
           </ul>
           <a
             href="#"
@@ -71,8 +71,8 @@
           <h2 class="section-title text-center mb-3">Nosotros</h2>
         </div>
         <div class="row">
-          <div class="col-lg-8">
-            <p>
+          <div class="col-lg-8" id="nosotros-info">
+            <!-- <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Veritatis facere ipsam at distinctio? Fugiat quos adipisci sunt
               aliquam, molestiae, sapiente numquam voluptatem maxime sint,
@@ -89,10 +89,12 @@
               Veritatis facere ipsam at distinctio? Fugiat quos adipisci sunt
               aliquam, molestiae, sapiente numquam voluptatem maxime sint,
               impedit nemo repudiandae aut dolores. Ratione?
-            </p>
+            </p> -->
+          </div>
+        </div>
           <div class="row">
-            <div class="col-sm-6">
-              <h3>Misión</h3>
+            <div class="col-sm-6" id="mision-info">
+              <!-- <h3>Misión</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Veritatis facere ipsam at distinctio? Fugiat quos adipisci sunt
@@ -105,10 +107,10 @@
                 Veritatis facere ipsam at distinctio? Fugiat quos adipisci sunt
                 aliquam, molestiae, sapiente numquam voluptatem maxime sint,
                 impedit nemo repudiandae aut dolores. Ratione?
-              </p>
+              </p> -->
             </div>
-            <div class="col-sm-6">
-              <h3>Visión</h3>
+            <div class="col-sm-6" id="vision-info">
+              <!-- <h3>Visión</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Veritatis facere ipsam at distinctio? Fugiat quos adipisci sunt
@@ -121,22 +123,21 @@
                 Veritatis facere ipsam at distinctio? Fugiat quos adipisci sunt
                 aliquam, molestiae, sapiente numquam voluptatem maxime sint,
                 impedit nemo repudiandae aut dolores. Ratione?
-              </p>
+              </p> -->
             </div>
           </div>
-          <div class="row">
-            <div class="col-sm-6">
+          <div class="row" id="service-info">
+            <!-- <div class="col-sm-6">
               <h3 class="mb-3">Nuestros servicios</h3>
               <h6><b>- Asesoria bancaria</b></h6>
               <h6><b>- Pública con Nosotros</b></h6>
-
             </div>
             <div class="col-sm-6">
               <h3 class="mb-5"></h3>
               <h6><b>- Administración de arriendo</b></h6>
               <h6><b>- Servicios legales</b></h6>
 
-            </div>
+            </div> -->
           </div>
         </div>
           <div class="col-lg-4 bg-section-about"><span></span></div>
@@ -165,7 +166,7 @@
               <li class="text"><a href="nosotros.html" style="color: #fff !important;font-size: 18px">Nosotros</a></li>
               <li class="text"><a href="propiedad.html" style="color: #fff !important;font-size: 18px">Propiedades</a></li>
               <li class="text"><a href="contacto.html" style="color: #fff !important;font-size: 18px">Contáctanos</a></li>
-              <li class="text"><a href="intranet.html" style="color: #fff !important;font-size: 18px">Intranet</a></li>
+              <li class="text"><a href="http://190.114.255.247:195/" style="color: #fff !important;font-size: 18px">Intranet</a></li>
             </ul>
           </div>
 
@@ -173,19 +174,17 @@
             <div class="contact-info">
               <h4>Contacto</h4>
               <ul>
-                <li>
-                  <i class="icon-map-marker"></i>
-                  <span class="text"
-                    >RentalProps Spa Apoquindo 6410 Of. 605, Las Condes</span
-                  >
+                <li id="footer-address-ContactInfo">
+                  <!-- <i class="icon-map-marker"></i> -->
+                  <!-- <span class="text">RentalProps Spa Apoquindo 6410 Of. 605, Las Condes</span> -->
                 </li>
-                <li>
-                  <i class="icon-phone"></i>
-                  <span class="text">+56 9 1234 5678</span>
+                <li id="footer-phone-ContactInfo">
+                  <!-- <i class="icon-phone"></i> -->
+                  <!-- <span class="text">+56 9 1234 5678</span> -->
                 </li>
-                <li>
-                  <i class="icon-message"></i>
-                  <span class="text">contacto@rentalprop.cl</span>
+                <li id="footer-email-ContactInfo">
+                  <!-- <i class="icon-message"></i>
+                  <span class="text">contacto@rentalprop.cl</span> -->
                 </li>
               </ul>
             </div>
@@ -254,30 +253,35 @@
           $(this).attr('data-id', i + 1);
         });
 
-        var typed = new Typed('.typed-words', {
-          strings: [
-            'San Francisco.',
-            ' Paris.',
-            ' New Zealand.',
-            ' Maui.',
-            ' London.',
-          ],
-          typeSpeed: 80,
-          backSpeed: 80,
-          backDelay: 4000,
-          startDelay: 1000,
-          loop: true,
-          showCursor: true,
-          preStringTyped: (arrayPos, self) => {
-            arrayPos++;
-            console.log(arrayPos);
-            $('.slides img').removeClass('active');
-            $('.slides img[data-id="' + arrayPos + '"]').addClass('active');
-          },
-        });
+        // var typed = new Typed('.typed-words', {
+        //   strings: [
+        //     'San Francisco.',
+        //     ' Paris.',
+        //     ' New Zealand.',
+        //     ' Maui.',
+        //     ' London.',
+        //   ],
+        //   typeSpeed: 80,
+        //   backSpeed: 80,
+        //   backDelay: 4000,
+        //   startDelay: 1000,
+        //   loop: true,
+        //   showCursor: true,
+        //   preStringTyped: (arrayPos, self) => {
+        //     arrayPos++;
+        //     console.log(arrayPos);
+        //     $('.slides img').removeClass('active');
+        //     $('.slides img[data-id="' + arrayPos + '"]').addClass('active');
+        //   },
+        // });
       });
     </script>
 
     <script src="js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="js/Data/AboutInfo.js"></script>
+    <script type="module" src="js/Data/ServicesInfo.js"></script>
+    <script type="module" src="js/Data/ContactInfo.js"></script>
+
   </body>
 </html>

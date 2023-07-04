@@ -12,6 +12,8 @@ export default async function apiDetalleCall(id, statusId, companyId){
 const response = await ExchangeRateServices.getExchangeRateUF();
 const ufValue = response?.UFs[0]?.Valor
 const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
+const ufValueAsNumber2 = parseInt(ufValue.replace('.', '').replace(',', '.'));
+
 
 let indicator;
 let img;
@@ -21,7 +23,7 @@ let img;
 
 data.images.forEach((images, index) => {img +=
     ` <li class="splide__slide" ${ index == 0 ? "active" : ""}" >
-        <img src="${images != undefined && images != null && images != "" ? images : "/img/Sin.png"}" style="height:592px;width:98%;" />
+        <img src="${images.replace(/\\/g, "//") != undefined ? images.replace(/\\/g, "//")  : ''}" style="height:592px;width:98%;" />
       </li>
     `
     // indicator += `
@@ -36,6 +38,7 @@ document.getElementById('carusel-detail-prop').innerHTML =
 
     var splide = new Splide( '.splide', {
       direction: 'ttb',
+      autoplay: "play",
       height   : '32rem',
       type: 'loop',
       focus: 'center'
@@ -50,10 +53,20 @@ document.getElementById('titleProp').innerHTML =
 `<span>${data.title}</span>
 <small>${data.types} / ${data.operation}</small> `;
 
-document.getElementById('extra-prop').innerHTML = 
-`<h4>UF ${clpToUf(data.price, ufValueAsNumber)} / CLP ${parseToCLPCurrency(data?.price)}</h4>
-<p>REF: ${data.id}</p>
-<p>${data.commune != null && data.commune != undefined && data.commune != "" ? data.commune : "No registra comuna"}, ${data.region != null && data.region != undefined && data.region != "" ? data.region : "No registra región"}, Chile</p> `;
+
+
+if(data.currency.isoCode != 'CLP'){
+  document.getElementById('extra-prop').innerHTML =
+  `<h4 style="font-weight:700 !important">UF ${data.price} / CLP ${parseToCLPCurrency(data.price * ufValueAsNumber2)}</h4>
+  <p style="font-weight: 700 !important">REF: ${data.id}</p>
+  <p>${data.commune != null && data.commune != undefined && data.commune != "" ? data.commune : "No registra comuna"}, ${data.region != null && data.region != undefined && data.region != "" ? data.region : "No registra región"}, Chile</p> `;
+}else {
+  document.getElementById('extra-prop').innerHTML =
+  `<h4 style="font-weight:700 !important">UF ${clpToUf(data.price, ufValueAsNumber)} / CLP ${parseToCLPCurrency(data?.price)}</h4>
+  <p style="font-weight:700 !important >REF: ${data.id}</p>
+  <p>${data.commune != null && data.commune != undefined && data.commune != "" ? data.commune : "No registra comuna"}, ${data.region != null && data.region != undefined && data.region != "" ? data.region : "No registra región"}, Chile</p> `;
+}
+
 
 document.getElementById('caracteristica-prop').innerHTML = 
 `<h4>Caracteristicas</h4>
@@ -77,7 +90,7 @@ document.getElementById('caracteristica-prop').innerHTML =
 </ul>`;
 
 document.getElementById('descrip-prop').innerHTML = 
-`<h4>Descripción</h4>
+`<h4 style="font-weigth:700 !important>Descripción</h4>
 <p>
 ${data.description != null && data.description != undefined && data.description != "" ? data.description : "No registra descripción" }
 </p> `;
