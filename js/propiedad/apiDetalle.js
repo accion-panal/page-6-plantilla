@@ -20,7 +20,6 @@ let img;
 
 
 // console.log(id); // Imprimirá "134" si ese es el valor actual del parámetro "id"
-
 data.images.forEach((images, index) => {img +=
     ` <li class="splide__slide" ${ index == 0 ? "active" : ""}" >
         <img src="${images.replace(/\\/g, "//") != undefined ? images.replace(/\\/g, "//")  : ''}" style="height:592px;width:98%;" />
@@ -47,6 +46,18 @@ document.getElementById('carusel-detail-prop').innerHTML =
     
     splide.mount();
 
+
+document.getElementById('data-realtor').innerHTML = `
+<h4>${data.realtor.name} / ${data.realtor.lastName != null || data.realtor.lastName != undefined ? data.realtor.lastName : ''}</h4>
+<p>
+  <i class="icon-send"></i>
+  <span style="color: #fff;">${data.realtor.mail != null ? data.realtor.mail : 'No cuenta con correo'}</span>
+</p>
+<p>
+  <i class="icon-whatsapp"></i>
+  <span style="color: #fff;">${data.realtor.contactPhone != null ? data.realtor.contactPhone : 'No cuenta con Número de celular'}</span>
+</p>
+`;
 
 
 document.getElementById('titleProp').innerHTML = 
