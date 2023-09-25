@@ -2319,8 +2319,16 @@ iframe {
   padding: 0 10px 0 10px;
   border-radius: 25px;
 }
-
 .btnNavActive a{
+  color: #fff !important;
+}
+
+.btnNavActiveNav{
+  background: var(--color-info); 
+  padding: 0 10px 0 10px;
+  border-radius: 25px;
+}
+.btnNavActiveNav .nav-link{
   color: #fff !important;
 }
 

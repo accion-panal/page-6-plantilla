@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
 
-    <title>Contacto - Página básica 6</title>
+    <title>Contacto - Página B-6</title>
   </head>
 
   <body>
@@ -50,9 +50,18 @@
           >
             <li><a href="index.html">Inicio</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="propiedad.html">Propiedades</a></li>
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Propiedades</a>
+              <ul class="dropdown-menu">
+                <li> 
+                  <a class="dropdown-item active" href="propiedad.html">Propiedades</a>
+                  <a class="dropdown-item " href="vendida.html">Propiedades vendidas</a>
+                  <a class="dropdown-item " href="arrendada.html">Propiedades arrendadas</a>
+                </li>
+              </ul>
+            </li>
             <li class="active btnNavActive"><a href="contacto.html">Contáctanos</a></li>
-            <li><a href="http://190.114.255.247:195/">Intranet</a></li>
+            <li><a href="https://accion.panal.house/" target="_blank">Intranet</a></li>
           </ul>
           <a
             href="#"
@@ -168,7 +177,7 @@
               <li class="text"><a href="nosotros.html" style="color: #fff !important;font-size: 18px">Nosotros</a></li>
               <li class="text"><a href="propiedad.html" style="color: #fff !important;font-size: 18px">Propiedades</a></li>
               <li class="text"><a href="contacto.html" style="color: #fff !important;font-size: 18px">Contáctanos</a></li>
-              <li class="text"><a href="http://190.114.255.247:195/" style="color: #fff !important;font-size: 18px">Intranet</a></li>
+              <li class="text"><a href="https://accion.panal.house/" target="_blank" style="color: #fff !important;font-size: 18px">Intranet</a></li>
             </ul>
           </div>
 
@@ -193,22 +202,22 @@
             <div class="social-media">
               <ul>
                 <li>
-                  <a href="/index.html">
+                  <a href="/index.html" target="_blank">
                     <i class="icon-linkedin"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="/index.html">
+                  <a href="/index.html" target="_blank">
                     <i class="icon-instagram"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="/index.html">
+                  <a href="/index.html" target="_blank">
                     <i class="icon-twitter"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="/index.html">
+                  <a href="/index.html" target="_blank">
                     <i class="icon-facebook"></i>
                   </a>
                 </li>
@@ -279,6 +288,8 @@
       });
     </script> -->
 
+		<!-- Option 1: Bootstrap Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<script type="module" src="js/utils/PostContact.js"></script>

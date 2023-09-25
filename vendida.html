@@ -34,7 +34,7 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
     <!--FIN MAPBOX CSS -->
 
-    <title>Propiedades - Página B-6</title>
+    <title>Propiedades vendidas - Página B-6</title>
   </head>
 
   <body>
@@ -57,9 +57,16 @@
           >
             <li><a href="index.html">Inicio</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
-            <li class="active btnNavActive">
-              <a href="propiedad.html">Propiedades</a>
-            </li>
+            <li class="nav-item dropdown btnNavActiveNav">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Propiedades</a>
+                <ul class="dropdown-menu">
+                  <li> 
+                    <a class="dropdown-item " href="propiedad.html">Propiedades</a>
+                    <a class="dropdown-item active " href="vendida.html">Propiedades vendidas</a>
+                    <a class="dropdown-item " href="arrendada.html">Propiedades arrendadas</a>
+                  </li>
+                </ul>
+              </li>
             <li><a href="contacto.html">Contáctanos</a></li>
             <li><a href="https://accion.panal.house/" target="_blank">Intranet</a></li>
           </ul>
@@ -80,7 +87,7 @@
           <div class="col-lg-7">
             <form>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
                     <select class="form-control" id="typeOfProperty">
                       <option value="" selected>Tipo de Propiedad</option>
@@ -99,7 +106,7 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <div class="form-group">
                     <select class="form-control" id="operationType">
                       <option value="" selected>Tipo de Operación</option>
@@ -108,7 +115,7 @@
                       <option value="arriendo_temporal" >Arriendo Temporal</option>
                     </select>
                   </div>
-                </div>
+                </div> -->
                 <div class="col-md-12">
                   <div class="form-group">
                     <select class="form-control" id="region">
@@ -232,35 +239,52 @@
     <div class="section-color section-properties" style="margin-top: -130px;">
       <div class="container">
         <div class="row mb-5">
-          <div class="col-lg-5">
+          <div class="col-lg-4">
             <div class="properties-meta" id="total-prop">
-              <span> Propiedades encontradas</span> 
+              <span> Propiedades vendidas</span> 
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="row">
-              <div class="col-sm-5">
-                <span style="font-size: 16px;width: max-content;">Ordenar por: </span>
+          <div class="col-lg-5">
+            <div class="row" style="align-items: center;">
+              <div class="col-lg-4 col-sm-3">
+                <span style="font-size: 14px;width: max-content;">Ordenar por: </span>
               </div>
-              <div class="col">
+              <div class="col-lg-7 col-sm-9">
                 <div class="set-view-properties">     
                     <div class="position-relative ">
                       <select class="form-select" aria-label="Default select example" style="margin-left: 4px;" id="FilterPrice">
                         <option disabled selected>Seleccionar opción</option>
-									      <option value="MenorMayor">Precio de menor a mayor</option>
-									      <option value="MayorMenor">Precio de mayor a menor</option>
+								<option value="MenorMayor">Precio de menor a mayor</option>
+								<option value="MayorMenor">Precio de mayor a menor</option>
                       </select>
                     </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3">  
-          <ul class="nav" id="myTab" role="tablist">
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-6 col-lg-3" >
+                <ul class="nav" id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="btn btn-light active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tarjeta</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="btn btn-light" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Lista</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="btn btn-light " id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false" >Mapa</button>
+                  </li>
+                </ul>
+              </div>
+            </div>  
+            
+          <!-- <ul class="nav" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
               <a href="propiedad.html">
                   <button
-                  class="btn btn-light "
+                  class="btn btn-light active"
                   id="grilla-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#grilla"
@@ -275,7 +299,7 @@
             <li class="nav-item" role="presentation">
               <a href="propiedad-list.html">
               <button
-                class="btn btn-light active"
+                class="btn btn-light"
                 id="lista-tab"
                 data-bs-toggle="tab"
                 data-bs-target="#lista"
@@ -304,27 +328,46 @@
                 </button>
               </a>
             </li>
-          </ul>
+          </ul> -->
           </div>
         </div>
-
-
-        <div class="tab-pane fade active show" id="lista" role="tabpanel" aria-labelledby="lista-tab">
+           <!-- card tarjetas -->
             <div class="section-header-properties">
-              <h3 class="title-carousel-properties">Tipos de propiedad</h3>
+              <h3 class="title-carousel-properties" id="typeProp">Tipos de propiedad</h3>
             </div>
             <div class="row">
-              <div class="col-12">
-                <section class="splide" aria-label="Splide Basic HTML Example">
-                  <div class="splide__track">
-                    <ul class="splide__list" id="container-propiedad-list">
-                      <li class="splide__slide" ></li>
-                    
-                    </ul>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="tab-content " id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="row align-items-stretch" id="container-prop-card" style="justify-content: center;">
+                      <div class="spinner-border" role="status" style="margin: 10px 0;"><span class="visually-hidden">Loading...</span></div>
+                      <section class="splide" aria-label="Splide Basic HTML Example">
+                        <div class="splide__track">
+                          <ul class="splide__list" id="container-propiedad-grilla">
+                            <li class="splide__slide"></li>
+                          
+                          </ul>
+                        </div>
+                      </section>
+                    </div>
                   </div>
-                </section>
-              </div>
+                  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="row align-items-stretch" id="container-prop-list" style="justify-content: center;">
+                      <div class="spinner-border" role="status" style="margin: 10px 0;"><span class="visually-hidden">Loading...</span></div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade initialMap active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div id="div-map-section">
+                      <div id="map"></div>
+                    </div>
+                  </div>
+                </div>
+            
+              </div>       
             </div>
+            <div id="pagination-col"></div>
+          </div>
+        
         </div>
       </div>
     </div>
@@ -446,7 +489,6 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!-- <script src="js/owl.carousel.min.js"></script> -->
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
@@ -455,7 +497,7 @@
     <script src="js/daterangepicker.js"></script>
 
     <script src="js/typed.js"></script>
-    <script>
+    <!-- <script>
       $(function () {
         var slides = $(".slides"),
           images = slides.find("img");
@@ -485,12 +527,13 @@
         //     $('.slides img[data-id="' + arrayPos + '"]').addClass("active");
         //   },
         // });
-      });
+      }); -->
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<script type="module" src="js/index.js"></script>
-		<!-- <script type="module" src="js/pagination.js"></script> -->
+		<script type="module" src="js/utils/pagination.js"></script>
 		<script type="module" src="js/utils/getSelects.js"></script>
 	  <script type="module" src="js/utils/filterOnSearch.js"></script>
 	  <script type="module" src="js/Data/ContactInfo.js"></script>
